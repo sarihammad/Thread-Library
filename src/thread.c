@@ -12,11 +12,7 @@
 #endif  
   
 #include "interrupts.h"  
-  
-//****************************************************************************  
-// Private Definitions  
-//****************************************************************************  
-  
+
 /**         
  * The Thread States      
  */      
@@ -60,10 +56,6 @@ typedef struct wait_queue_t
   node* head;  
 } WaitQueue;  
   
-          
-//**************************************************************************************************  
-// Private Global Variables (Library State)  
-//**************************************************************************************************  
   
 // Current Running Thread          
 TCB *running_thread;          
@@ -76,12 +68,7 @@ WaitQueue rq;
   
 // Static Global Array of Waiting Queues          
 WaitQueue wait_queues[MAX_THREADS];      
-     
-  
-//**************************************************************************************************  
-// Helper Functions  
-//**************************************************************************************************  
-  
+
 /**    
  * Stub function to be used for the newly created thread.     
  * The function is called before the thread exits.    
@@ -223,9 +210,6 @@ void print_queue(WaitQueue *queue) {
 }
   
   
-//**************************************************************************************************  
-// thread.h Functions  
-//**************************************************************************************************  
 int          
 ThreadInit(void)          
 {  
@@ -472,9 +456,6 @@ ThreadYieldTo(Tid tid)
         
 }       
   
-//****************************************************************************  
-// New Assignment 2 Definitions - Task 2  
-//****************************************************************************  
 WaitQueue*  
 WaitQueueCreate(void)  
 {  
